@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インタラクティブ・マインドマップ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 基本的なスタイリング */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        /* SVGコンテナのスタイリング */
+        #mindmap-container {
+            width: 100%;
+            height: 90vh; /* ビューポートの高さの90% */
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* SVGがコンテナをはみ出さないようにする */
+        }
+        /* markmapが生成するSVGのスタイル */
+        .markmap {
+            width: 100%;
+            height: 100%;
+        }
+        /* ヘッダーのフォント */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+
+    <div class="w-full max-w-7xl">
+        <header class="text-center mb-6">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">萬俵　秀俊プロフィール マインドマップ</h1>
+            <p class="text-gray-600 mt-2">各項目をクリックすると詳細を展開/縮小できます。ドラッグで移動、スクロールで拡大・縮小が可能です。</p>
+        </header>
+
+        <!-- マインドマップが描画されるコンテナ -->
+        <div id="mindmap-container">
+            <!-- autoloaderがこのdivをマインドマップに変換します -->
+            <div class="markmap">
+# 候補者プロフィール
+
+- **募集要項 (Job Requirements)**
+    - **業務内容**
+        - 候補者履歴書の分析 (サマリ、面接ポイント、スキル推測)
+        - LLM APIを用いた処理実装 (要約、比較、推論)
+        - データ前処理ロジックの開発
+        - 品質・時間・コストの検証とレポート作成
+    - **応募条件**
+        - **必須**
+            - LLM API活用経験 (1年以上)
+            - Python開発経験 (2年以上)
+            - LangChain使用経験
+        - **歓迎**
+            - 非同期/バッチ処理の設計経験
+            - LLM品質評価の知見
+            - プロンプトエンジニアリング経験
+    - **求める人物像**
+        - 非エンジニアへの説明能力
+        - チームの技術サポート役
+        - 部門間連携力
+        - 新技術への学習意欲
+- **自己評価 (Self-Assessment)**
+    - **必須条件への対応**
+        - **LLM API**: ◯ (小規模プロジェクトでHTML解析等に活用)
+        - **Python API連携**: ◎ (複数APIでの開発経験、仕様の自力解決が可能)
+        - **LangChain**: △ (直接経験はないが、関連クラウドサービス経験から自力対応可能)
+    - **歓迎条件への対応**
+        - **非同期/バッチ処理**: ◯ (実践経験あり、I/O衝突への懸念も認識)
+        - **LLM品質評価**: △ (基礎的な経験あり、機械学習分野含め挑戦意欲が高い)
+        - **プロンプトエンジニアリング**: ◎ (学術的知識と画像生成AI等での実践経験)
+- **学習・知見 (Learning & Knowledge)**
+    - **LLM生成文の品質評価**
+        - **BLEU**: 機械翻訳向け (適合率重視)
+        - **ROUGE**: 文章要約向け (再現率重視)
+        - **CIDEr**: 画像キャプション向け (コンセンサスベース)
+        - **METEOR**: 機械翻訳向け (BLEUの改良版、意味的類似性も考慮)
+- **ビジョン・動機 (Vision & Motivation)**
+    - **社会貢献への意識**
+        - 雇用の流動性が高まる社会において、採用支援は貢献性が高いサービス
+    - **技術への貢献意欲**
+        - 技術の発展に生涯貢献したいという強い意志
+        - (背景: AIから示唆された核兵器廃絶とニュートリノの関連性)
+- **まとめ (Summary)**
+    - **強み**: Python, 複数API連携, プロンプトエンジニアリングの実践経験
+    - **ポテンシャル**: LangChainや高度な品質評価手法も、関連経験と高い学習意欲から早期キャッチアップを期待
+    - **人物像**: 技術探求心と社会貢献意欲を両立した、自走力の高い候補者
+    - **総合評価**: 募集要項との親和性が高く、特に歓迎条件に多く合致する即戦力候補
+            </div>
+        </div>
+    </div>
+
+    <!-- Markmap Autoloaderライブラリの読み込み -->
+    <!-- このスクリプトが自動的に.markmapクラスの要素をマインドマップに変換します -->
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.15.4"></script>
+
+</body>
+</html>
